@@ -10,6 +10,7 @@ public class creator : MonoBehaviour
     public GameObject water;
     public GameObject rock;
     public GameObject charge;
+    public GameObject acid;
 
     private bool flag = true;
 
@@ -39,7 +40,12 @@ public class creator : MonoBehaviour
             chosen = water;
         }
 
-        if ( Input.GetKeyDown(KeyCode.Alpha4))
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            chosen = acid;
+        }
+
+        if ( Input.GetKeyDown(KeyCode.Alpha5))
         {
             chosen = charge;
         }
@@ -49,18 +55,18 @@ public class creator : MonoBehaviour
         {
             pos = Camera.main.ScreenToWorldPoint( Input.mousePosition + new Vector3(0, 0, 9) );
 
-            if (chosen != water)
+            if (chosen != charge)
             {
                 clone = Instantiate(chosen, pos, transform.rotation);
             }
-            /*else
+            else
             {
-                if ( flag == true)
+                if (flag == true)
                 {
                     flag = false;
                     StartCoroutine(PlaceCharge());
                 }
-            }*/
+            }
 
         }
     }
@@ -69,7 +75,7 @@ public class creator : MonoBehaviour
     {
         clone = Instantiate(chosen, pos, transform.rotation);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
 
         flag = true;
     }

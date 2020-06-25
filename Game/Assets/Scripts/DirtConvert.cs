@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Convert : MonoBehaviour
+public class DirtConvert : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Sprite mudSprite;

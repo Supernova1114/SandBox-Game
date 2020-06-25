@@ -28,12 +28,12 @@ public class countDownHandler : MonoBehaviour
 
         temp = (ArrayList)(inRadius.Clone());
 
-        foreach (GameObject obj in temp)
+        /*foreach (GameObject obj in temp)
         {
             obj.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             obj.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 500));
 
-        }
+        }*/
 
         StartCoroutine(Bleh());
 
@@ -47,13 +47,13 @@ public class countDownHandler : MonoBehaviour
 
     IEnumerator Bleh()
     {
-        /*yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
         foreach (GameObject obj in temp)
         {
             Destroy(obj, 0f);
         }
-        */
+
         yield return new WaitForSeconds(0f);
         Destroy(this.gameObject, 0);
 

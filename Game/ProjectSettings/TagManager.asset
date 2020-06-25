@@ -6,6 +6,8 @@ TagManager:
   tags:
   - water
   - charge
+  - dirt
+  - acid
   layers:
   - Default
   - TransparentFX

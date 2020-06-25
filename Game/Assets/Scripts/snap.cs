@@ -14,7 +14,7 @@ public class snap : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //Snap();
+        Snap();
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class snap : MonoBehaviour
     }
 
 
-    /*private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         collisionCount++;
     }
@@ -31,18 +31,24 @@ public class snap : MonoBehaviour
     {
         collisionCount--;
 
-        if (collisionCount > 0)
+        if (flag == false)
+        {
+            flag = true;
+            Snap();
+        }
+
+        /*if (collisionCount > 0)
         {
             if (flag == false)
             {
                 flag = true;
                 Snap();
             }
-        }
-    }*/
+        }*/
+    }
 
 
-    void Snap() 
+    public void Snap() 
     {
         StartCoroutine(SnapToPos());
     }
@@ -75,6 +81,11 @@ public class snap : MonoBehaviour
         yield return new WaitForSeconds(snapTime);
 
         body.bodyType = RigidbodyType2D.Static;
+
+        if ( collisionCount == 0)
+        {
+            Snap();
+        }
 
         //transform.rotation = new Quaternion(0, 0, 0, 0);
         /*Vector3 ppp = Camera.main.WorldToScreenPoint( 16, 16, 0, Camera.MonoOrStereoscopicEye.Mono);
