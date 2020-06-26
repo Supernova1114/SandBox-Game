@@ -9,7 +9,7 @@ public class countDownHandler : MonoBehaviour
     private ArrayList temp;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         StartCoroutine(StartCountDown());
     }
