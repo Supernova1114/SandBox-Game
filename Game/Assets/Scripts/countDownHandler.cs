@@ -8,6 +8,8 @@ public class countDownHandler : MonoBehaviour
     public ArrayList inRadius = new ArrayList();
     private ArrayList temp;
 
+    public GameObject guyBoom;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -45,17 +47,42 @@ public class countDownHandler : MonoBehaviour
         //Destroy(this.gameObject, 0);
     }
 
+    //GameObject t;
     IEnumerator Bleh()
     {
         //yield return new WaitForSeconds(2f);
 
         foreach (GameObject obj in temp)
         {
-            Destroy(obj, 0f);
+            if ( !obj.CompareTag("guy") )
+            {
+                Destroy(obj, 0f);
+            }
+            else
+            {
+                StartCoroutine(HandleGuy(obj));
+            }
+            
         }
 
         yield return new WaitForSeconds(0f);
         Destroy(this.gameObject, 0);
 
     }
+
+    IEnumerator HandleGuy(GameObject obj)
+    {
+        GameObject temp = obj;
+        Destroy(obj, 0f);
+
+        GameObject guyBoomObj = Instantiate(guyBoom, temp.transform.position, temp.transform.rotation);
+
+        Vector2 rel = (Vector2)(temp.transform.position - transform.position).normalized;
+        guyBoomObj.GetComponent<guyExploder>().SendForce(rel);
+
+        yield return new WaitForSeconds(0);
+    }
+
+
+
 }
