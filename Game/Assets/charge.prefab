@@ -174,4 +174,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererr: {fileID: 4415027898643013229}
-  guyBoom: {fileID: 8619297316774274703, guid: 3fb60865f33811a4ca54302e5b8881dc, type: 3}

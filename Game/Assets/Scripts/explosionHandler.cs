@@ -3,7 +3,7 @@
 public class explosionHandler : MonoBehaviour
 {
 
-    //public GameObject charge;
+    public GameObject charge;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
