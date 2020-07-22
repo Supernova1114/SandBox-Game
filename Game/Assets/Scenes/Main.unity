@@ -263,7 +263,7 @@ MonoBehaviour:
   rock: {fileID: 6605957318991101622, guid: d5cdeafb570fec54ab7aba0d1f7a06fb, type: 3}
   charge: {fileID: 4415027898643013228, guid: 3099206bc0ea29b45aaafaab4c4c3abb, type: 3}
   acid: {fileID: 6912680949396328720, guid: 8afab92526991cc4fbba2df6ddac312c, type: 3}
-  guy: {fileID: 6180648753187565268, guid: 24638490562077944a95d40d093aef17, type: 3}
+  guy: {fileID: 884967939712447746, guid: 24638490562077944a95d40d093aef17, type: 3}
 --- !u!4 &406088376
 Transform:
   m_ObjectHideFlags: 0

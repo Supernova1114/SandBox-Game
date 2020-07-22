@@ -11,9 +11,16 @@ public class snap : MonoBehaviour
     private bool flag = false;
     private bool fall = false;
 
+    private float waitTime = 2;
+
+    //private GameObject waaaa;
+
     // Start is called before the first frame update
     void Awake()
     {
+        if (gameObject.tag == "water" || gameObject.tag == "acid")
+            waitTime = 0.1f;
+        //waaaa = GameObject.Find("Waa");
         Snap();
     }
 
@@ -23,7 +30,7 @@ public class snap : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         collisionCount++;
     }
@@ -37,15 +44,17 @@ public class snap : MonoBehaviour
             Snap();
         }
 
-        /*if (collisionCount > 0)
+        *//*if (collisionCount > 0)
         {
             if (flag == false)
             {
                 flag = true;
                 Snap();
             }
-        }*/
-    }
+        }*//*
+    }*/
+
+
 
 
     public void Snap() 
@@ -56,7 +65,7 @@ public class snap : MonoBehaviour
 
     IEnumerator SnapToPos() 
     {
-        if ( flag == true)
+        /*if ( flag == true)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -88,10 +97,37 @@ public class snap : MonoBehaviour
         }
 
         //transform.rotation = new Quaternion(0, 0, 0, 0);
-        /*Vector3 ppp = Camera.main.WorldToScreenPoint( 16, 16, 0, Camera.MonoOrStereoscopicEye.Mono);
-        Vector3 newPos = transform.position;*/
+        *//*Vector3 ppp = Camera.main.WorldToScreenPoint( 16, 16, 0, Camera.MonoOrStereoscopicEye.Mono);
+        Vector3 newPos = transform.position;*//*
 
-        flag = false;
+        flag = false;*/
+
+
+        while ( 0 < 1 )
+        {
+
+          
+            yield return new WaitForSeconds(waitTime);
+            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.1f);
+
+            //print(cast.collider.gameObject);
+
+            //Instantiate(waaaa, cast.point, transform.rotation);
+
+            if (cast.collider != null)
+            {
+                body.bodyType = RigidbodyType2D.Static;
+            }
+            else
+            {
+                body.bodyType = RigidbodyType2D.Dynamic;
+            }
+
+
+        }
+
+
+
     }
 
 }

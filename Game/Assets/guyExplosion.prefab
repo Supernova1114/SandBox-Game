@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 94267697064316659}
   - component: {fileID: 94267697064316658}
   - component: {fileID: 94267697064316669}
+  - component: {fileID: 8842595665162845934}
   m_Layer: 0
   m_Name: guyP3
   m_TagString: Untagged
@@ -160,6 +161,18 @@ MonoBehaviour:
   body: {fileID: 94267697064316656}
   colliderr: {fileID: 94267697064316659}
   snapTime: 10
+--- !u!114 &8842595665162845934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697064316671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697327247565
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +187,7 @@ GameObject:
   - component: {fileID: 94267697327247553}
   - component: {fileID: 94267697327247552}
   - component: {fileID: 94267697327247555}
+  - component: {fileID: 7975600645244653203}
   m_Layer: 0
   m_Name: guyP5
   m_TagString: Untagged
@@ -320,6 +334,18 @@ MonoBehaviour:
   body: {fileID: 94267697327247558}
   colliderr: {fileID: 94267697327247553}
   snapTime: 10
+--- !u!114 &7975600645244653203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697327247565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697335870918
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +360,7 @@ GameObject:
   - component: {fileID: 94267697335870938}
   - component: {fileID: 94267697335870917}
   - component: {fileID: 94267697335870916}
+  - component: {fileID: 7582203966177601798}
   m_Layer: 0
   m_Name: guyP7
   m_TagString: Untagged
@@ -480,6 +507,18 @@ MonoBehaviour:
   body: {fileID: 94267697335870939}
   colliderr: {fileID: 94267697335870938}
   snapTime: 10
+--- !u!114 &7582203966177601798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697335870918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697591130690
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +533,7 @@ GameObject:
   - component: {fileID: 94267697591130694}
   - component: {fileID: 94267697591130689}
   - component: {fileID: 94267697591130688}
+  - component: {fileID: 1385004338161977946}
   m_Layer: 0
   m_Name: guyP2
   m_TagString: Untagged
@@ -640,6 +680,18 @@ MonoBehaviour:
   body: {fileID: 94267697591130695}
   colliderr: {fileID: 94267697591130694}
   snapTime: 10
+--- !u!114 &1385004338161977946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697591130690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697675743197
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +706,7 @@ GameObject:
   - component: {fileID: 94267697675743185}
   - component: {fileID: 94267697675743184}
   - component: {fileID: 94267697675743187}
+  - component: {fileID: 5086551075040073971}
   m_Layer: 0
   m_Name: guyP6
   m_TagString: Untagged
@@ -800,6 +853,18 @@ MonoBehaviour:
   body: {fileID: 94267697675743190}
   colliderr: {fileID: 94267697675743185}
   snapTime: 10
+--- !u!114 &5086551075040073971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697675743197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697934519240
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +879,7 @@ GameObject:
   - component: {fileID: 94267697934519244}
   - component: {fileID: 94267697934519247}
   - component: {fileID: 94267697934519246}
+  - component: {fileID: 4515082094199628298}
   m_Layer: 0
   m_Name: guyP4
   m_TagString: Untagged
@@ -960,6 +1026,18 @@ MonoBehaviour:
   body: {fileID: 94267697934519245}
   colliderr: {fileID: 94267697934519244}
   snapTime: 10
+--- !u!114 &4515082094199628298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697934519240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267697961306027
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1052,7 @@ GameObject:
   - component: {fileID: 94267697961306031}
   - component: {fileID: 94267697961306030}
   - component: {fileID: 94267697961306025}
+  - component: {fileID: 2312136799098543341}
   m_Layer: 0
   m_Name: guyP1
   m_TagString: Untagged
@@ -1120,6 +1199,18 @@ MonoBehaviour:
   body: {fileID: 94267697961306028}
   colliderr: {fileID: 94267697961306031}
   snapTime: 10
+--- !u!114 &2312136799098543341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94267697961306027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &94267698317537416
 GameObject:
   m_ObjectHideFlags: 0
