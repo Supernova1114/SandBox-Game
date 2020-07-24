@@ -8,8 +8,8 @@ public class snap : MonoBehaviour
     public Collider2D colliderr;
     public float snapTime;
     private int collisionCount;
-    private bool flag = false;
-    private bool fall = false;
+    //private bool flag = false;
+    //private bool fall = false;
 
     private float waitTime = 2;
 
@@ -18,10 +18,11 @@ public class snap : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        if (gameObject.tag == "water" || gameObject.tag == "acid")
-            waitTime = 0.1f;
-        //waaaa = GameObject.Find("Waa");
-        Snap();
+        //if (gameObject.tag == "water" || gameObject.tag == "acid")
+            //waitTime = 0.0f;
+            //waaaa = GameObject.Find("Waa");
+        if (gameObject.tag != "water" && gameObject.tag != "acid")
+            Snap();
     }
 
     void Update()
@@ -55,10 +56,24 @@ public class snap : MonoBehaviour
     }*/
 
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        //collisionCount--;
+        if (gameObject.tag != "water" && gameObject.tag != "acid")
+            Snap();
+    }
+
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //collisionCount++;
+    }*/
+
+
 
 
     public void Snap() 
     {
+        if ( gameObject.activeSelf )
         StartCoroutine(SnapToPos());
     }
 
@@ -117,6 +132,7 @@ public class snap : MonoBehaviour
             if (cast.collider != null)
             {
                 body.bodyType = RigidbodyType2D.Static;
+                break;
             }
             else
             {

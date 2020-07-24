@@ -160,7 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a1664ea2c47fb408cf4091e8f627dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guyRenderer: {fileID: 0}
   guyBoom: {fileID: 8619297316774274703, guid: 3fb60865f33811a4ca54302e5b8881dc, type: 3}
 --- !u!114 &8685859166848669010
 MonoBehaviour:
