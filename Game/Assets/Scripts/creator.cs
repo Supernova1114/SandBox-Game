@@ -12,6 +12,7 @@ public class creator : MonoBehaviour
     public GameObject charge;
     public GameObject acid;
     public GameObject guy;
+    public GameObject badguy;
 
     private bool flag = true;
 
@@ -56,12 +57,17 @@ public class creator : MonoBehaviour
             chosen = guy;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            chosen = badguy;
+        }
+
 
         if ( Input.GetMouseButton(0) )
         {
             pos = Camera.main.ScreenToWorldPoint( Input.mousePosition + new Vector3(0, 0, 9) );
 
-            if (chosen != charge && chosen != guy)
+            if (chosen != charge && !chosen.CompareTag("guy"))
             {
                 clone = Instantiate(chosen, pos, transform.rotation);
             }

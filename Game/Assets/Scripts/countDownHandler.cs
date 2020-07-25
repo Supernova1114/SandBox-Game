@@ -9,6 +9,7 @@ public class countDownHandler : MonoBehaviour
     private ArrayList temp;
 
     public GameObject guyBoom;
+    public GameObject badguyBoom;
 
     // Start is called before the first frame update
     void Awake()

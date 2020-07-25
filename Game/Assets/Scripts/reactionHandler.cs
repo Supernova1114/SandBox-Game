@@ -35,15 +35,23 @@ public class reactionHandler : MonoBehaviour
                     Destroy(gameObject);
                 break;
 
-            /*case "guy":
-                GameObject temp = collision.gameObject;
+            case "guyPiece":
+                Destroy(collision.gameObject, 1);
+                timesReacted++;
 
-                Destroy(collision.gameObject, 0f);
+                if (timesReacted == 3)
+                    Destroy(gameObject);
+                break;
 
-                Instantiate(guyBoom, temp.transform.position, temp.transform.rotation);
+                /*case "guy":
+                    GameObject temp = collision.gameObject;
 
-                Destroy(gameObject);
-                break;*/
+                    Destroy(collision.gameObject, 0f);
+
+                    Instantiate(guyBoom, temp.transform.position, temp.transform.rotation);
+
+                    Destroy(gameObject);
+                    break;*/
 
         }
 

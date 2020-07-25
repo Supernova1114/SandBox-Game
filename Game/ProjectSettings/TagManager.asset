@@ -9,6 +9,7 @@ TagManager:
   - dirt
   - acid
   - guy
+  - guyPiece
   layers:
   - Default
   - TransparentFX

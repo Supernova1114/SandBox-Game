@@ -22,9 +22,13 @@ public class snap : MonoBehaviour
     void Awake()
     {
         //if (gameObject.tag == "water" || gameObject.tag == "acid")
-            //waitTime = 0.0f;
-            //waaaa = GameObject.Find("Waa");
-        if (gameObject.tag != "water" && gameObject.tag != "acid")
+        //waitTime = 0.0f;
+        //waaaa = GameObject.Find("Waa");
+        //if (gameObject.tag != "water" && gameObject.tag != "acid")
+
+        if (gameObject.tag == "water" && gameObject.tag == "acid")
+            waitTime = 0.1f;
+
             SnapAgg();
 
         if (flag)
@@ -75,13 +79,26 @@ public class snap : MonoBehaviour
         /*if ( collisionCount < 2 )
             Snap();*/
 
-        if (collisionCount < 3)
+        RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
+        //count++;
+        //print(cast.collider.gameObject);
+
+        //Instantiate(waaaa, cast.point, transform.rotation);
+
+        if (cast.collider == null)
         {
-            StopCoroutine(SnapToPosPassive());
-            //body.bodyType = RigidbodyType2D.Static;
             SnapAgg();
         }
+
+        
+
+        /*if (collisionCount < 3)
+        {
+            //StopCoroutine(SnapToPosPassive());
+            //body.bodyType = RigidbodyType2D.Static;
             
+        }*/
+
 
     }
 
@@ -94,6 +111,17 @@ public class snap : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         collisionCount++;
+
+        RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
+        //count++;
+        //print(cast.collider.gameObject);
+
+        //Instantiate(waaaa, cast.point, transform.rotation);
+
+        if (cast.collider == null)
+        {
+            SnapAgg();
+        }
         //body.bodyType = RigidbodyType2D.Static;
     }
 
@@ -110,7 +138,7 @@ public class snap : MonoBehaviour
         
     }
 
-    public void SnapPas()
+    /*public void SnapPas()
     {
         if (gameObject.activeSelf)
         {
@@ -118,10 +146,10 @@ public class snap : MonoBehaviour
             StartCoroutine(SnapToPosPassive());
         }
 
-    }
+    }*/
 
 
-    IEnumerator SnapToPosPassive()
+    /*IEnumerator SnapToPosPassive()
     {
 
 
@@ -142,7 +170,7 @@ public class snap : MonoBehaviour
             if (cast.collider != null)
             {
                 body.bodyType = RigidbodyType2D.Static;
-                SnapAgg();
+                //SnapAgg();
                 break;
             }
             else
@@ -154,7 +182,7 @@ public class snap : MonoBehaviour
         }
 
 
-    }
+    }*/
 
     IEnumerator SnapToPosAggressive() 
     {
@@ -203,7 +231,7 @@ public class snap : MonoBehaviour
 
           
             yield return new WaitForSeconds(waitTime);
-            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.1f);
+            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
             count++;
             //print(cast.collider.gameObject);
 
