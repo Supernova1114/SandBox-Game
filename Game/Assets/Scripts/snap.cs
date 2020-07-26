@@ -153,15 +153,18 @@ public class snap : MonoBehaviour
 
     private void Cast()
     {
+
+
         if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
         {
+            //print("cast");
             RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
 
 
-            if (cast.collider == null)
+            if (cast.collider == null || (cast.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
             {
                 body.bodyType = RigidbodyType2D.Dynamic;
-                //Snap();
+                
             }
             else
             {

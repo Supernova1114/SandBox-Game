@@ -8,8 +8,8 @@ public class countDownHandler : MonoBehaviour
     public ArrayList inRadius = new ArrayList();
     private ArrayList temp;
 
-    public GameObject guyBoom;
-    public GameObject badguyBoom;
+    //public GameObject guyBoom;
+    //public GameObject badguyBoom;
 
     // Start is called before the first frame update
     void Awake()
@@ -55,7 +55,7 @@ public class countDownHandler : MonoBehaviour
 
         foreach (GameObject obj in temp)
         {
-            if ( !obj.CompareTag("guy") )
+            if ( !obj.CompareTag("guy") && !obj.CompareTag("badguy") )
             {
 
                 Destroy(obj, 0f);

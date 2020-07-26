@@ -9,6 +9,8 @@ public class explode : MonoBehaviour
     
     public GameObject guyPieces;
 
+    public float health = 4;
+
     private bool flag = true;
 
     // Start is called before the first frame update
@@ -34,6 +36,7 @@ public class explode : MonoBehaviour
                 boom(Vector2.zero);
             }
         }
+
 
     }
 

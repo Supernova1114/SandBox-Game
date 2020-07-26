@@ -5,6 +5,7 @@ using UnityEngine;
 public class guyExploder : MonoBehaviour
 {
     public float explosionMult;
+    public bool isBattleMode;
     // Start is called before the first frame update
     void Start()
     {

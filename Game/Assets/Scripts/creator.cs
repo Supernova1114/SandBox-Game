@@ -13,6 +13,7 @@ public class creator : MonoBehaviour
     public GameObject acid;
     public GameObject guy;
     public GameObject badguy;
+    public GameObject tile;
 
     private bool flag = true;
 
@@ -27,6 +28,8 @@ public class creator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if ( Input.GetKeyDown( KeyCode.Alpha1 ) )
         {
             chosen = dirt;
@@ -62,12 +65,18 @@ public class creator : MonoBehaviour
             chosen = badguy;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            chosen = tile;
+        }
+
+
 
         if ( Input.GetMouseButton(0) )
         {
             pos = Camera.main.ScreenToWorldPoint( Input.mousePosition + new Vector3(0, 0, 9) );
 
-            if (chosen != charge && !chosen.CompareTag("guy"))
+            if (chosen != charge && !chosen.CompareTag("guy") && !chosen.CompareTag("badguy"))
             {
                 clone = Instantiate(chosen, pos, transform.rotation);
             }

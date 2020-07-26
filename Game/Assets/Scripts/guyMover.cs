@@ -32,9 +32,9 @@ public class guyMover : MonoBehaviour
         {
             int rand = (int)Random.Range(1, 2.99f);
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
 
-            if (body.velocity == Vector2.zero)
+            if (body.velocity.x < 0.2 && body.velocity.y < 0.2)
             {
                 if (rand == 1)
                 {

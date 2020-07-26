@@ -6,11 +6,14 @@ public class childController : MonoBehaviour
 {
     public Rigidbody2D body;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //body = gameObject.GetComponent<Rigidbody2D>();
+        if ( gameObject.GetComponentInParent<guyExploder>().isBattleMode)
+        {
+            Destroy(gameObject, 5f);
+        }
     }
+
 
     // Update is called once per frame
     void Update()

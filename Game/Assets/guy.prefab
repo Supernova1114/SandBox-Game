@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 884967939712447775}
   - component: {fileID: 3575944462822398231}
   - component: {fileID: 5176398393025932106}
+  - component: {fileID: -2865733834261892438}
   m_Layer: 0
   m_Name: guy
   m_TagString: guy
@@ -174,3 +175,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 884967939712447745}
   guyPieces: {fileID: 94267698317537416, guid: 3fb60865f33811a4ca54302e5b8881dc, type: 3}
+  health: 100
+--- !u!114 &-2865733834261892438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884967939712447746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ba1148f990c9047a2a69b4fe83077e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normSprite: {fileID: 21300000, guid: 9aa710ffebab8f340ac13a6828295686, type: 3}
+  hurtSprite: {fileID: 21300000, guid: 5abe1676dff27b14083849cd762d5046, type: 3}
+  rendr: {fileID: 884967939712447747}
+  health: 4
