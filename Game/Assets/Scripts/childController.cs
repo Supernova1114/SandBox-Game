@@ -10,7 +10,7 @@ public class childController : MonoBehaviour
     {
         if ( gameObject.GetComponentInParent<guyExploder>().isBattleMode)
         {
-            Destroy(gameObject, 5f);
+            Destroy(gameObject, 3f);
         }
     }
 

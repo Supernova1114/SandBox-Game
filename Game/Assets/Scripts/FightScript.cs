@@ -14,6 +14,7 @@ public class FightScript : MonoBehaviour
 
     private bool shouldHit = false;
     public int health = 4;
+    public float knockback;
 
     void Awake()
     {
@@ -55,7 +56,8 @@ public class FightScript : MonoBehaviour
 
             if (health == 0)
             {
-                gameObject.GetComponent<explode>().boom(Vector2.zero);
+                Vector2 rel = (Vector2)(transform.position - obj.transform.position).normalized;
+                gameObject.GetComponent<explode>().boom(rel*knockback);
             }
         }
     }

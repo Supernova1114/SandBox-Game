@@ -10,7 +10,13 @@ public class guyMover : MonoBehaviour
     public int upForce;
 
     //bool col = false;
+    //private bool flag = true;
 
+    //private bool isAggressive = false;
+
+    private int rand;
+
+    private GameObject target = null;
 
 
     // Start is called before the first frame update
@@ -27,12 +33,28 @@ public class guyMover : MonoBehaviour
 
     IEnumerator Movement()
     {
-
         while (0 < 1)
         {
-            int rand = (int)Random.Range(1, 2.99f);
-
             yield return new WaitForSeconds(2);
+
+            GameObject tempTarget = target;
+
+            if (tempTarget == null)
+            {
+                rand = (int)Random.Range(1, 2.99f);
+            }
+            else
+            {
+                if (tempTarget.transform.position.x < transform.position.x)
+                {
+                    rand = 1;
+                }
+                else
+                {
+                    rand = 2;
+                }
+            }
+            
 
             if (body.velocity.x < 0.2 && body.velocity.y < 0.2)
             {
@@ -51,6 +73,29 @@ public class guyMover : MonoBehaviour
 
 
     }
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (gameObject.CompareTag("guy") && collision.gameObject.CompareTag("badguy"))
+        {
+            target = collision.gameObject;
+        }
+        else
+        {
+            if (gameObject.CompareTag("badguy") && collision.gameObject.CompareTag("guy"))
+            {
+                target = collision.gameObject;
+            }
+        }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        target = null;
+    }
+
 
     /*private void OnCollisionEnter2D(Collision2D collision)
     {

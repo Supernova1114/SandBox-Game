@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3575944462822398231}
   - component: {fileID: 5176398393025932106}
   - component: {fileID: -2865733834261892438}
+  - component: {fileID: -8840030214387945607}
   m_Layer: 0
   m_Name: guy
   m_TagString: guy
@@ -190,5 +191,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normSprite: {fileID: 21300000, guid: 9aa710ffebab8f340ac13a6828295686, type: 3}
   hurtSprite: {fileID: 21300000, guid: 5abe1676dff27b14083849cd762d5046, type: 3}
+  randAdd: 0.5
   rendr: {fileID: 884967939712447747}
   health: 4
+  knockback: 0.3
+--- !u!58 &-8840030214387945607
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884967939712447746}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3
