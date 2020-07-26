@@ -57,6 +57,7 @@ public class countDownHandler : MonoBehaviour
         {
             if ( !obj.CompareTag("guy") )
             {
+
                 Destroy(obj, 0f);
             }
             else
@@ -74,15 +75,14 @@ public class countDownHandler : MonoBehaviour
     IEnumerator HandleGuy(GameObject obj)
     {
         GameObject temp = obj;
-        Destroy(obj, 0f);
-
-        GameObject guyBoomObj = Instantiate(guyBoom, temp.transform.position, temp.transform.rotation);
 
         Vector2 rel = (Vector2)(temp.transform.position - transform.position).normalized;
-        guyBoomObj.GetComponent<guyExploder>().SendForce(rel);
 
-        yield return new WaitForSeconds(0);
+        obj.GetComponent<explode>().boom(rel);
+
+        yield return new WaitForSeconds(0f);
     }
+
 
 
 

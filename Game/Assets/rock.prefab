@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6605957318991101617}
   - component: {fileID: 6605957318991101616}
   - component: {fileID: 6605957318991101623}
-  - component: {fileID: 6605957318991101612}
   - component: {fileID: 6605957318991101619}
   - component: {fileID: 6605957318991101618}
   - component: {fileID: -2335605988029143191}
+  - component: {fileID: 8181225020366483829}
   m_Layer: 0
   m_Name: rock
   m_TagString: Untagged
@@ -107,21 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6605957318991101612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6605957318991101622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46488f1b2e3269c4384a6cf924ccd804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 6605957318991101623}
-  colliderr: {fileID: 6605957318991101618}
-  snapTime: 10
 --- !u!114 &6605957318991101619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8181225020366483829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6605957318991101622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46488f1b2e3269c4384a6cf924ccd804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 6605957318991101623}

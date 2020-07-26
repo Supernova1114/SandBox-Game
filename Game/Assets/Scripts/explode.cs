@@ -31,15 +31,22 @@ public class explode : MonoBehaviour
             if (flag)
             {
                 flag = false;
-                boom();
+                boom(Vector2.zero);
             }
         }
+
     }
 
-    private void boom()
+
+    public void boom(Vector2 force)
     {
+        
         body.simulated = false;
-        Instantiate(guyPieces, transform.position, transform.rotation);
+
+        GameObject obj = Instantiate(guyPieces, transform.position, transform.rotation);
+
+        obj.GetComponent<guyExploder>().SendForce(force);
+
         Destroy(gameObject, 0);
     }
 

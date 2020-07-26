@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6012996984098479375}
   - component: {fileID: 6012996984098479368}
-  - component: {fileID: 6012996984098479372}
   - component: {fileID: 6012996984098479373}
   - component: {fileID: 6012996984098479374}
   - component: {fileID: 3796285032601777448}
   - component: {fileID: -4782682751738761326}
   - component: {fileID: -6156081330248531705}
+  - component: {fileID: -7504334216912781925}
   m_Layer: 0
   m_Name: water
   m_TagString: water
@@ -87,21 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6012996984098479372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6012996984098479369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46488f1b2e3269c4384a6cf924ccd804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 6012996984098479373}
-  colliderr: {fileID: 6012996984098479374}
-  snapTime: 10
 --- !u!50 &6012996984098479373
 Rigidbody2D:
   serializedVersion: 4
@@ -177,3 +162,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderr: {fileID: 6012996984098479374}
   acid: {fileID: 6912680949396328720, guid: 8afab92526991cc4fbba2df6ddac312c, type: 3}
+--- !u!114 &-7504334216912781925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012996984098479369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46488f1b2e3269c4384a6cf924ccd804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  body: {fileID: 6012996984098479373}
+  colliderr: {fileID: 6012996984098479374}
+  snapTime: 10

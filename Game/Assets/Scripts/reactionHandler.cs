@@ -8,7 +8,7 @@ public class reactionHandler : MonoBehaviour
 
     //public SpriteRenderer guyRenderer;
 
-    public GameObject guyBoom;
+    //public GameObject guyBoom;
 
     // Start is called before the first frame update
     void Start()

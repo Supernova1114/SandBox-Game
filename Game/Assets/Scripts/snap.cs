@@ -5,16 +5,16 @@ using UnityEngine;
 public class snap : MonoBehaviour
 {
     public Rigidbody2D body;
-    public Collider2D colliderr;
-    public float snapTime;
+    //public Collider2D colliderr;
+    //public float snapTime;
     private int collisionCount;
     //private bool flag = false;
     //private bool fall = false;
 
-    private float waitTime = 2;
+    /*private float waitTime = 2;
 
     private static float count = 0;
-    private static bool flag = true;
+    private static bool flag = true;*/
 
     //private GameObject waaaa;
 
@@ -26,23 +26,25 @@ public class snap : MonoBehaviour
         //waaaa = GameObject.Find("Waa");
         //if (gameObject.tag != "water" && gameObject.tag != "acid")
 
-        if (gameObject.tag == "water" && gameObject.tag == "acid")
-            waitTime = 0.1f;
+        /* if (gameObject.tag == "water" && gameObject.tag == "acid")
+             waitTime = 0.1f;
 
-            SnapAgg();
+             SnapAgg();
 
-        if (flag)
-        {
-            flag = false;
-            StartCount();
-        }
+         if (flag)
+         {
+             flag = false;
+             StartCount();
+         }*/
+
+        StartCoroutine(LookAtCollisions());
         
     }
 
-    void Update()
+    /*void Update()
     {
         
-    }
+    }*/
 
 
     /*private void OnCollisionEnter2D(Collision2D collision)
@@ -70,14 +72,14 @@ public class snap : MonoBehaviour
     }*/
 
 
-    private void OnCollisionExit2D(Collision2D collision)
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         collisionCount--;
         //if (gameObject.tag != "water" && gameObject.tag != "acid")
         //if ( collisionCount == 1  )
 
-        /*if ( collisionCount < 2 )
-            Snap();*/
+        *//*if ( collisionCount < 2 )
+            Snap();*//*
 
         RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
         //count++;
@@ -87,10 +89,15 @@ public class snap : MonoBehaviour
 
         if (cast.collider == null)
         {
-            SnapAgg();
+            body.bodyType = RigidbodyType2D.Dynamic;
+            //Snap();
         }
+        else
+        {
+            body.bodyType = RigidbodyType2D.Static;
+        }*/
 
-        
+
 
         /*if (collisionCount < 3)
         {
@@ -100,15 +107,15 @@ public class snap : MonoBehaviour
         }*/
 
 
-    }
+    //}
 
 
-    private void StartCount()
+    /*private void StartCount()
     {
         StartCoroutine(PrintCount());
-    }
+    }*/
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         collisionCount++;
 
@@ -120,23 +127,61 @@ public class snap : MonoBehaviour
 
         if (cast.collider == null)
         {
-            SnapAgg();
+            body.bodyType = RigidbodyType2D.Dynamic;
+            //Snap();
+        }
+        else
+        {
+            body.bodyType = RigidbodyType2D.Static;
         }
         //body.bodyType = RigidbodyType2D.Static;
+    }*/
+
+
+    IEnumerator LookAtCollisions()
+    {
+        yield return new WaitForSeconds(2);
+
+        while (0 < 1)
+        {
+            yield return new WaitForSeconds(1f);
+            Cast();
+            
+
+        }
     }
 
-
-
-
-    public void SnapAgg() 
+    private void Cast()
     {
-        if ( gameObject.activeSelf )
+        if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
         {
-            //count++;
-            StartCoroutine(SnapToPosAggressive());
+            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
+
+
+            if (cast.collider == null)
+            {
+                body.bodyType = RigidbodyType2D.Dynamic;
+                //Snap();
+            }
+            else
+            {
+                body.bodyType = RigidbodyType2D.Static;
+            }
         }
         
     }
+    
+
+    /*public void Snap() 
+    {
+        if ( gameObject.activeSelf )
+        {
+            StopCoroutine(SnapToPos());
+            //count++;
+            StartCoroutine(SnapToPos());
+        }
+        
+    }*/
 
     /*public void SnapPas()
     {
@@ -184,9 +229,9 @@ public class snap : MonoBehaviour
 
     }*/
 
-    IEnumerator SnapToPosAggressive() 
+    /*IEnumerator SnapToPos() 
     {
-        /*if ( flag == true)
+        *//*if ( flag == true)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -221,12 +266,12 @@ public class snap : MonoBehaviour
         *//*Vector3 ppp = Camera.main.WorldToScreenPoint( 16, 16, 0, Camera.MonoOrStereoscopicEye.Mono);
         Vector3 newPos = transform.position;*//*
 
-        flag = false;*/
+        flag = false;*//*
 
         yield return new WaitForSeconds(1f);
 
 
-        while ( 0 < 1 )
+        *//*while ( 0 < 1 )
         {
 
           
@@ -248,14 +293,14 @@ public class snap : MonoBehaviour
             }
 
 
-        }
+        }*//*
 
 
 
-    }
+    }*/
 
 
-    IEnumerator PrintCount()
+    /*IEnumerator PrintCount()
     {
         while (0 < 1)
         {
@@ -264,7 +309,7 @@ public class snap : MonoBehaviour
             count = 0;
         }
         
-    }
+    }*/
 
 
 }

@@ -159,8 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 133017631928936964}
-  colliderr: {fileID: 5685304251470376074}
-  snapTime: 10
 --- !u!114 &6176617938997754577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,8 +330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 4788303828965656700}
-  colliderr: {fileID: 1355657015449927757}
-  snapTime: 10
 --- !u!114 &5770149295881588942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8481cb6fd09cd3c49a0bf8c3f7a28f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionMult: 300
+  explosionMult: 1000
 --- !u!1 &5959504865326568887
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,8 +552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 677615576738722485}
-  colliderr: {fileID: 5259609583136498590}
-  snapTime: 10
 --- !u!114 &4388747541721872935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,8 +723,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 4037533208614664886}
-  colliderr: {fileID: 5806465973404679204}
-  snapTime: 10
 --- !u!114 &853230669468087672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,8 +894,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 2983873363363539084}
-  colliderr: {fileID: 7936212401145393113}
-  snapTime: 10
 --- !u!114 &8422587925263554834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,8 +1065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 5657148763175125021}
-  colliderr: {fileID: 8451995151491893523}
-  snapTime: 10
 --- !u!114 &4995001278942457490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,8 +1236,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1529308603471491697}
-  colliderr: {fileID: 8516056283920905830}
-  snapTime: 10
 --- !u!114 &4330351062685260747
 MonoBehaviour:
   m_ObjectHideFlags: 0

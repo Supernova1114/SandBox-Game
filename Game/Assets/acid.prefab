@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6912680949396328734}
   - component: {fileID: 6912680949396328735}
   - component: {fileID: -5734315062303756759}
-  - component: {fileID: 8685859166848669010}
+  - component: {fileID: -1573141896729587304}
   m_Layer: 0
   m_Name: acid
   m_TagString: acid
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guyBoom: {fileID: 8619297316774274703, guid: 3fb60865f33811a4ca54302e5b8881dc, type: 3}
---- !u!114 &8685859166848669010
+--- !u!114 &-1573141896729587304
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
