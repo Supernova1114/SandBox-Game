@@ -11,6 +11,7 @@ TagManager:
   - guy
   - guyPiece
   - badguy
+  - oil
   layers:
   - Default
   - TransparentFX
