@@ -51,7 +51,7 @@ public class Buoyancy : MonoBehaviour
 
         while (0 < 1)
         {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
             Cast();
             //yield return new WaitForSeconds(0.1f);
             //colliderr2D.isTrigger = false;
@@ -80,7 +80,7 @@ public class Buoyancy : MonoBehaviour
                 cast.collider.gameObject.GetComponent<snap>().body.bodyType = RigidbodyType2D.Dynamic;
                 body.bodyType = RigidbodyType2D.Dynamic;
 
-                transform.position += new Vector3(0, 0.4f, 0);
+                transform.position += new Vector3(0, 0.2f, 0);
                 //body.AddForce(new Vector2(0, force));
 
             }

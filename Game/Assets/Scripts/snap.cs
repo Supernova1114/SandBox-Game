@@ -145,7 +145,7 @@ public class snap : MonoBehaviour
         while (0 < 1)
         {
             yield return new WaitForSeconds(1f);
-            Cast();
+            Cast2();
             
 
         }
@@ -173,7 +173,35 @@ public class snap : MonoBehaviour
         }
         
     }
-    
+
+
+
+
+    private void Cast2()
+    {
+
+        if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
+        {
+            //print("cast");
+            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
+            RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.12f);
+            RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.12f);
+
+
+            if (cast1.collider == null || (cast2.collider == null && cast3.collider == null) || (cast1.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
+            {
+                body.bodyType = RigidbodyType2D.Dynamic;
+            }
+            else
+            {
+                body.bodyType = RigidbodyType2D.Static;
+            }
+        }
+
+    }
+
+
+
 
     /*public void Snap() 
     {
