@@ -8,6 +8,13 @@ public class snap : MonoBehaviour
     //public Collider2D colliderr;
     //public float snapTime;
     private int collisionCount;
+
+    bool flag = true;
+
+    static bool coool = true;
+
+    private static int count;
+
     //private bool flag = false;
     //private bool fall = false;
 
@@ -37,8 +44,20 @@ public class snap : MonoBehaviour
              StartCount();
          }*/
 
+        StartCoroutine(Wait2Sec());
+
+        if (coool)
+        {
+            coool = false;
+            StartCoroutine(counter());
+        }
+
+    }
+
+    IEnumerator Wait2Sec()
+    {
+        yield return new WaitForSeconds(2);
         StartCoroutine(LookAtCollisions());
-        
     }
 
     /*void Update()
@@ -140,23 +159,32 @@ public class snap : MonoBehaviour
 
     IEnumerator LookAtCollisions()
     {
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
 
         while (0 < 1)
         {
             yield return new WaitForSeconds(1f);
-            Cast2();
-            
+            bool cont = Cast2();
+
+            if (cont == false)
+            {
+                StopCoroutine(LookAtCollisions());
+                flag = true;
+                break;
+            }
+
 
         }
     }
 
-    private void Cast()
+
+    private bool Cast()
     {
 
 
         if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
         {
+            count++;
             //print("cast");
             RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
 
@@ -164,43 +192,95 @@ public class snap : MonoBehaviour
             if (cast.collider == null || (cast.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
             {
                 body.bodyType = RigidbodyType2D.Dynamic;
+                return true;
                 
             }
             else
             {
                 body.bodyType = RigidbodyType2D.Static;
+                return false;
             }
         }
+
+        return false;
         
     }
 
 
 
 
-    private void Cast2()
+    private bool Cast2()
     {
 
         if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
         {
+            count++;
             //print("cast");
             RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
             RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.12f);
             RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.12f);
 
 
-            if (cast1.collider == null || (cast2.collider == null && cast3.collider == null) || (cast1.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
+            bool shouldCast = CheckCasts(cast1, cast2, cast3);
+
+
+            if (shouldCast || (cast1.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
             {
                 body.bodyType = RigidbodyType2D.Dynamic;
+                return true;
             }
             else
             {
                 body.bodyType = RigidbodyType2D.Static;
+                return false;
             }
         }
+
+        return false;
 
     }
 
 
+    private bool CheckCasts(RaycastHit2D cast1, RaycastHit2D cast2, RaycastHit2D cast3)
+    {
+        if (cast1.collider == null || (cast2.collider == null && cast3.collider == null))
+            return true;
+
+        return false;
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (flag)
+        {
+            flag = false;
+            StopCoroutine(LookAtCollisions());
+            StartCoroutine(LookAtCollisions());
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (flag)
+        {
+            flag = false;
+            StopCoroutine(LookAtCollisions());
+            StartCoroutine(LookAtCollisions());
+        }
+    }
+
+
+    IEnumerator counter()
+    {
+        while (0 < 1)
+        {
+            count = 0;
+            yield return new WaitForSeconds(1);
+            print(count);
+        }
+
+    }
 
 
     /*public void Snap() 
