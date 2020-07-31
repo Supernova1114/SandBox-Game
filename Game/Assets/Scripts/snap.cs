@@ -9,7 +9,7 @@ public class snap : MonoBehaviour
     //public float snapTime;
     private int collisionCount;
 
-    bool flag = true;
+    bool flag = false;
 
     static bool coool = true;
 
@@ -57,6 +57,7 @@ public class snap : MonoBehaviour
     IEnumerator Wait2Sec()
     {
         yield return new WaitForSeconds(2);
+        flag = true;
         StartCoroutine(LookAtCollisions());
     }
 
@@ -186,7 +187,7 @@ public class snap : MonoBehaviour
         {
             count++;
             //print("cast");
-            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
+            RaycastHit2D cast = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.105f);
 
 
             if (cast.collider == null || (cast.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
@@ -216,9 +217,9 @@ public class snap : MonoBehaviour
         {
             count++;
             //print("cast");
-            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.12f);
-            RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.12f);
-            RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.12f);
+            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.105f);
+            RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.105f);
+            RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.105f);
 
 
             bool shouldCast = CheckCasts(cast1, cast2, cast3);
@@ -256,6 +257,7 @@ public class snap : MonoBehaviour
         {
             flag = false;
             StopCoroutine(LookAtCollisions());
+            if (gameObject.activeSelf)
             StartCoroutine(LookAtCollisions());
         }
     }
@@ -266,6 +268,7 @@ public class snap : MonoBehaviour
         {
             flag = false;
             StopCoroutine(LookAtCollisions());
+            if (gameObject.activeSelf)
             StartCoroutine(LookAtCollisions());
         }
     }

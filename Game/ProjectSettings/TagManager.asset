@@ -12,6 +12,7 @@ TagManager:
   - guyPiece
   - badguy
   - oil
+  - fire
   layers:
   - Default
   - TransparentFX

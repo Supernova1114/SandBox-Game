@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 2887547773838368978}
   - component: {fileID: 2887547773838368979}
   - component: {fileID: 2887547773838368980}
+  - component: {fileID: 6122534775898922839}
+  - component: {fileID: 883395473130168805}
   m_Layer: 0
   m_Name: oil
-  m_TagString: Untagged
+  m_TagString: oil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,3 +178,37 @@ MonoBehaviour:
   body: {fileID: 2887547773838369007}
   colliderr2D: {fileID: 2887547773838368976}
   force: 14
+--- !u!114 &6122534775898922839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887547773838368981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c5d862e5a20bb47bb546de65b778dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererr: {fileID: 2887547773838369006}
+  fire1: {fileID: 21300000, guid: 3fbc222daf90e35499e930a8bc4018d7, type: 3}
+  fire2: {fileID: 21300000, guid: 3551df7bc085771419b2d00b0a1ee65b, type: 3}
+  fire3: {fileID: 21300000, guid: 0f86ec8ebf380d54298a8f70fd38959c, type: 3}
+  oil: {fileID: 0}
+  burnTime: 5
+--- !u!58 &883395473130168805
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887547773838368981}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3275864
