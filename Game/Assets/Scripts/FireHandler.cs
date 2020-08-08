@@ -7,6 +7,7 @@ public class FireHandler : MonoBehaviour
 
     public SpriteRenderer rendererr;
     public Sprite fire1, fire2, fire3, oil;
+    public Rigidbody2D body;
 
     public float burnTime;
 
@@ -23,14 +24,14 @@ public class FireHandler : MonoBehaviour
         
     }
 
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (flag && collision.gameObject.CompareTag("fire"))
         {
             flag = false;
             tag = "fire";
-            
+            body.bodyType = RigidbodyType2D.Dynamic;
+
             StartCoroutine(FireAnimation());
         }
     }
@@ -38,6 +39,8 @@ public class FireHandler : MonoBehaviour
 
     IEnumerator FireAnimation()
     {
+        //yield return new WaitForSeconds(1);
+        
 
         Destroy(gameObject, burnTime);
         while (0 < 1)

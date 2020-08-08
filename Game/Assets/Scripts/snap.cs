@@ -15,6 +15,8 @@ public class snap : MonoBehaviour
 
     private static int count;
 
+    private bool shouldSchedule = true;
+
     //private bool flag = false;
     //private bool fall = false;
 
@@ -26,7 +28,7 @@ public class snap : MonoBehaviour
     //private GameObject waaaa;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         //if (gameObject.tag == "water" || gameObject.tag == "acid")
         //waitTime = 0.0f;
@@ -49,7 +51,7 @@ public class snap : MonoBehaviour
         if (coool)
         {
             coool = false;
-            StartCoroutine(counter());
+            //StartCoroutine(counter());
         }
 
     }
@@ -57,8 +59,95 @@ public class snap : MonoBehaviour
     IEnumerator Wait2Sec()
     {
         yield return new WaitForSeconds(2);
-        flag = true;
-        StartCoroutine(LookAtCollisions());
+        //flag = true;
+        //StartCoroutine(LookAtCollisions());
+        StartCoroutine(PhysicsScheduler());
+        //StartCoroutine(PhysicsController());
+    }
+
+
+    IEnumerator PhysicsScheduler()
+    {
+        while (0 < 1)
+        {
+            yield return new WaitForSeconds(1f);
+
+            if (shouldSchedule)
+            {
+                
+                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.11f);
+
+                if (cast1.collider == null)
+                {
+                    body.bodyType = RigidbodyType2D.Dynamic;
+                }
+                else
+                {
+                    body.bodyType = RigidbodyType2D.Static;
+                }
+
+                //shouldSchedule = false;
+            }
+        }
+        
+
+    }
+
+    IEnumerator PhysicsSchedulerAlternate()
+    {
+        while (0 < 1)
+        {
+            yield return new WaitForSeconds(10f);
+
+            if (!shouldSchedule)
+            {
+
+                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.11f);
+
+                if (cast1.collider == null)
+                {
+                    body.bodyType = RigidbodyType2D.Dynamic;
+                }
+                else
+                {
+                    body.bodyType = RigidbodyType2D.Static;
+                }
+
+                //shouldSchedule = false;
+            }
+        }
+    }
+        /*IEnumerator PhysicsController()
+        {
+            yield return new WaitForSeconds(1f);
+
+            RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.11f);
+
+            if (cast1.collider == null)
+            {
+                body.bodyType = RigidbodyType2D.Dynamic;
+            }
+            else
+            {
+                body.bodyType = RigidbodyType2D.Static;
+            }
+
+
+        }*/
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        shouldSchedule = true;
+        //StopCoroutine(PhysicsController());
+        //StartCoroutine(PhysicsController());
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        shouldSchedule = true;
+        //StopCoroutine(PhysicsController());
+        //StartCoroutine(PhysicsController());
     }
 
     /*void Update()
@@ -119,12 +208,12 @@ public class snap : MonoBehaviour
 
 
 
-        /*if (collisionCount < 3)
-        {
-            //StopCoroutine(SnapToPosPassive());
-            //body.bodyType = RigidbodyType2D.Static;
-            
-        }*/
+    /*if (collisionCount < 3)
+    {
+        //StopCoroutine(SnapToPosPassive());
+        //body.bodyType = RigidbodyType2D.Static;
+
+    }*/
 
 
     //}
@@ -158,7 +247,7 @@ public class snap : MonoBehaviour
     }*/
 
 
-    IEnumerator LookAtCollisions()
+    /*IEnumerator LookAtCollisions()
     {
         //yield return new WaitForSeconds(2);
 
@@ -176,10 +265,10 @@ public class snap : MonoBehaviour
 
 
         }
-    }
+    }*/
 
 
-    private bool Cast()
+    /*private bool Cast()
     {
 
 
@@ -205,24 +294,24 @@ public class snap : MonoBehaviour
 
         return false;
         
-    }
+    }*/
 
 
 
 
-    private bool Cast2()
+    /*private bool Cast2()
     {
 
         if (body.velocity.x < 0.5 && body.velocity.y < 0.5)
         {
             count++;
             //print("cast");
-            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.105f);
-            RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.105f);
-            RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.105f);
+            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.11f);
+            //RaycastHit2D cast2 = Physics2D.Raycast(gameObject.transform.position, Vector2.left, 0.105f);
+            //RaycastHit2D cast3 = Physics2D.Raycast(gameObject.transform.position, Vector2.right, 0.105f);
 
 
-            bool shouldCast = CheckCasts(cast1, cast2, cast3);
+            bool shouldCast = CheckCasts(cast1); //cast2, cast3);
 
 
             if (shouldCast || (cast1.collider.CompareTag("acid") && !gameObject.CompareTag("acid")))
@@ -239,39 +328,60 @@ public class snap : MonoBehaviour
 
         return false;
 
-    }
+    }*/
 
 
-    private bool CheckCasts(RaycastHit2D cast1, RaycastHit2D cast2, RaycastHit2D cast3)
+    /*private bool CheckCasts(RaycastHit2D cast1) //RaycastHit2D cast2, RaycastHit2D cast3)
     {
-        if (cast1.collider == null || (cast2.collider == null && cast3.collider == null))
+        if (cast1.collider == null) //|| (cast2.collider == null && cast3.collider == null))
             return true;
 
         return false;
-    }
+    }*/
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (flag)
         {
             flag = false;
-            StopCoroutine(LookAtCollisions());
-            if (gameObject.activeSelf)
-            StartCoroutine(LookAtCollisions());
-        }
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
+            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.11f);
+
+            if (cast1.collider == null)
+            {
+                StopCoroutine(LookAtCollisions());
+                if (gameObject.activeSelf)
+                    StartCoroutine(LookAtCollisions());
+            }
+            else
+            {
+                flag = true;
+            }
+            //else flag = true;
+        }
+    }*/
+
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         if (flag)
         {
             flag = false;
-            StopCoroutine(LookAtCollisions());
-            if (gameObject.activeSelf)
-            StartCoroutine(LookAtCollisions());
+
+            RaycastHit2D cast1 = Physics2D.Raycast(gameObject.transform.position, Vector2.down, 0.11f);
+
+            if (cast1.collider == null)
+            {
+                StopCoroutine(LookAtCollisions());
+                if (gameObject.activeSelf)
+                    StartCoroutine(LookAtCollisions());
+            }
+            else
+            {
+                flag = true;
+            }
         }
-    }
+    }*/
 
 
     IEnumerator counter()
