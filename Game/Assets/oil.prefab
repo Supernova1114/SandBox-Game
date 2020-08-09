@@ -159,9 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bd4fc41f113c134f8bb2129608d5d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 2887547773838369007}
-  colliderr2D: {fileID: 0}
-  force: 14
 --- !u!114 &6122534775898922839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,5 +228,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.33038145, y: 0.33038148}
+  m_Size: {x: 0.19504967, y: 0.1950497}
   m_EdgeRadius: 0
