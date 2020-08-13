@@ -48,21 +48,25 @@ public class snap : MonoBehaviour
 
         StartCoroutine(Wait2Sec());
 
-        if (coool)
+        /*if (coool)
         {
             coool = false;
             //StartCoroutine(counter());
-        }
+        }*/
 
     }
 
     IEnumerator Wait2Sec()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         //flag = true;
         //StartCoroutine(LookAtCollisions());
+
         StartCoroutine(PhysicsScheduler());
+
         //StartCoroutine(PhysicsSchedulerAlternate());
+        //body.bodyType = RigidbodyType2D.Static;
+        //body.Sleep();
     }
 
 
@@ -75,15 +79,17 @@ public class snap : MonoBehaviour
             if (shouldSchedule)
             {
                 
-                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.11f);
+                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.15f);
 
                 if (cast1.collider == null)
                 {
+                    body.WakeUp();
                     body.bodyType = RigidbodyType2D.Dynamic;
                 }
                 else
                 {
                     body.bodyType = RigidbodyType2D.Static;
+                    body.Sleep();
                 }
 
                 //shouldSchedule = false;
@@ -92,6 +98,10 @@ public class snap : MonoBehaviour
         
 
     }
+
+
+
+
 
     IEnumerator PhysicsSchedulerAlternate()
     {
@@ -102,7 +112,7 @@ public class snap : MonoBehaviour
             if (!shouldSchedule)
             {
 
-                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.11f);
+                RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 1f);
 
                 if (cast1.collider == null)
                 {
@@ -113,7 +123,7 @@ public class snap : MonoBehaviour
                     body.bodyType = RigidbodyType2D.Static;
                 }
 
-                //shouldSchedule = false;
+                shouldSchedule = false;
             }
         }
     }
@@ -136,8 +146,9 @@ public class snap : MonoBehaviour
         }*/
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
+        //if (body.velocity.x > 0.5f || body.velocity.y > 0.5f)
         shouldSchedule = true;
         //StopCoroutine(PhysicsController());
         //StartCoroutine(PhysicsController());
@@ -148,7 +159,7 @@ public class snap : MonoBehaviour
         shouldSchedule = true;
         //StopCoroutine(PhysicsController());
         //StartCoroutine(PhysicsController());
-    }
+    }*/
 
     /*void Update()
     {

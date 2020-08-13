@@ -164,8 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 4370370109376025206}
-  colliderr: {fileID: 4370370109376025210}
-  snapTime: 10
 --- !u!114 &6138533612619840628
 MonoBehaviour:
   m_ObjectHideFlags: 0

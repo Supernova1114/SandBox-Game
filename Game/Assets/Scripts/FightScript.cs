@@ -16,6 +16,8 @@ public class FightScript : MonoBehaviour
     public int health = 4;
     public float knockback;
 
+    private ArrayList collList = new ArrayList();
+
     void Awake()
     {
 
@@ -28,6 +30,7 @@ public class FightScript : MonoBehaviour
         }
 
         StartCoroutine(Fight());
+        StartCoroutine(HitLoop());
     }
 
     IEnumerator Fight()
@@ -62,13 +65,38 @@ public class FightScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if ( gameObject.CompareTag("guy") && collision.gameObject.CompareTag("badguy") )
-        Hit(collision.gameObject);
 
-        if (gameObject.CompareTag("badguy") && collision.gameObject.CompareTag("guy"))
-            Hit(collision.gameObject);
+    GameObject temp;
+    IEnumerator HitLoop()
+    {
+        while (0 < 1) 
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            
+            foreach (GameObject item in collList)
+            {
+                if (item.gameObject != null && (item.CompareTag("guy") || item.CompareTag("badguy")))
+                    temp = item;
+            }
+
+            if (temp != null && gameObject.CompareTag("guy") && temp.CompareTag("badguy"))
+                Hit(temp);
+
+            if (temp != null && gameObject.CompareTag("badguy") && temp.CompareTag("guy"))
+                Hit(temp);
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        collList.Add(collision.gameObject);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collList.Remove(collision.gameObject);
     }
 
 

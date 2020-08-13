@@ -55,7 +55,7 @@ public class countDownHandler : MonoBehaviour
 
         foreach (GameObject obj in temp)
         {
-            if ( !obj.CompareTag("guy") && !obj.CompareTag("badguy") )
+            if ( obj != null && !obj.CompareTag("guy") && !obj.CompareTag("badguy") )
             {
 
                 Destroy(obj, 0f);
@@ -74,13 +74,17 @@ public class countDownHandler : MonoBehaviour
 
     IEnumerator HandleGuy(GameObject obj)
     {
-        GameObject temp = obj;
+        if (obj != null)
+        {
+            GameObject temp = obj;
 
-        Vector2 rel = (Vector2)(temp.transform.position - transform.position).normalized;
+            Vector2 rel = (Vector2)(temp.transform.position - transform.position).normalized;
 
-        obj.GetComponent<explode>().boom(rel);
+            obj.GetComponent<explode>().boom(rel);
 
-        yield return new WaitForSeconds(0f);
+            yield return new WaitForSeconds(0f);
+        }
+        
     }
 
 

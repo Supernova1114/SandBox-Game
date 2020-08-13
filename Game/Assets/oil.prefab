@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2887547773838368977}
   - component: {fileID: 2887547773838368978}
   - component: {fileID: 2887547773838368979}
-  - component: {fileID: 2887547773838368980}
   - component: {fileID: 6122534775898922839}
   - component: {fileID: 6924833377767506250}
   - component: {fileID: 7639842150441925338}
@@ -147,18 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4646142f5b5c15644a5dd1ab5403468e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2887547773838368980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887547773838368981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd4fc41f113c134f8bb2129608d5d97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6122534775898922839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +164,7 @@ MonoBehaviour:
   fire3: {fileID: 21300000, guid: 0f86ec8ebf380d54298a8f70fd38959c, type: 3}
   oil: {fileID: 0}
   body: {fileID: 2887547773838369007}
-  burnTime: 5
+  burnTime: 3
 --- !u!61 &6924833377767506250
 BoxCollider2D:
   m_ObjectHideFlags: 0
