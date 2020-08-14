@@ -176,7 +176,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 884967939712447745}
   guyPieces: {fileID: 94267698317537416, guid: 3fb60865f33811a4ca54302e5b8881dc, type: 3}
-  health: 100
 --- !u!114 &-2865733834261892438
 MonoBehaviour:
   m_ObjectHideFlags: 0

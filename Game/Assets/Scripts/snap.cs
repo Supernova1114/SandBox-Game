@@ -81,7 +81,7 @@ public class snap : MonoBehaviour
                 
                 RaycastHit2D cast1 = Physics2D.Raycast(transform.position, Vector2.down, 0.15f);
 
-                if (cast1.collider == null)
+                if (cast1.collider == null || (cast1.collider.CompareTag("acid") && !CompareTag("acid")))
                 {
                     body.WakeUp();
                     body.bodyType = RigidbodyType2D.Dynamic;

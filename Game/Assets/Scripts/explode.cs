@@ -9,7 +9,7 @@ public class explode : MonoBehaviour
     
     public GameObject guyPieces;
 
-    public float health = 4;
+    //public float health = 4;
 
     private bool flag = true;
 

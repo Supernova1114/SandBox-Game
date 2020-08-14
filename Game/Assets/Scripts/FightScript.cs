@@ -66,25 +66,31 @@ public class FightScript : MonoBehaviour
     }
 
 
-    GameObject temp;
     IEnumerator HitLoop()
     {
         while (0 < 1) 
         {
             yield return new WaitForSeconds(0.1f);
 
-            
-            foreach (GameObject item in collList)
+            ArrayList tempList = (ArrayList)collList.Clone();
+            foreach (GameObject item in tempList)
             {
-                if (item.gameObject != null && (item.CompareTag("guy") || item.CompareTag("badguy")))
-                    temp = item;
+                if (item != null && gameObject.CompareTag("guy") && item.CompareTag("badguy"))
+                {
+                    Hit(item);
+                }
+                else
+                {
+                    if (item != null && gameObject.CompareTag("badguy") && item.CompareTag("guy"))
+                        Hit(item);
+                }
+
             }
 
-            if (temp != null && gameObject.CompareTag("guy") && temp.CompareTag("badguy"))
-                Hit(temp);
+            
+                
 
-            if (temp != null && gameObject.CompareTag("badguy") && temp.CompareTag("guy"))
-                Hit(temp);
+            
         }
     }
 
