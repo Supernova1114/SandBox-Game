@@ -14,8 +14,8 @@ public class creator : MonoBehaviour
     public GameObject guy;
     public GameObject badguy;
     public GameObject tile;
-    /*public GameObject oil;
-    public GameObject fire;*/
+    public GameObject oil;
+    public GameObject fire;
 
     private bool flag = true;
 
@@ -72,7 +72,7 @@ public class creator : MonoBehaviour
             chosen = tile;
         }
 
-        /*if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.Alpha9))
         {
             chosen = oil;
         }
@@ -80,7 +80,7 @@ public class creator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             chosen = fire;
-        }*/
+        }
 
 
 

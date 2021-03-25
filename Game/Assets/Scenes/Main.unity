@@ -266,6 +266,8 @@ MonoBehaviour:
   guy: {fileID: 884967939712447746, guid: 24638490562077944a95d40d093aef17, type: 3}
   badguy: {fileID: 1239950071567953765, guid: 370857db8ca914a4e964b2f6a3faacbb, type: 3}
   tile: {fileID: 5238101027977501412, guid: f40e5c7fe48809743b4287d7a5cbe0ca, type: 3}
+  oil: {fileID: 2887547773838368981, guid: 6e0cab0e63829cc4fb4b2924433eea8b, type: 3}
+  fire: {fileID: 8830713148722046011, guid: 15c7ccaf240f1c5418d401943c5d6022, type: 3}
 --- !u!4 &406088376
 Transform:
   m_ObjectHideFlags: 0
